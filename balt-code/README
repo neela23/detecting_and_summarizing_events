@@ -1,0 +1,18 @@
+// Runs the code in the order. (4) can be run after (2)
+
+
+1. breakFiles.py takes the input of sorted data(from /scratch2/navudai/baltimore/balt-sorted.csv") and breaks into files with data for every hour in the folder /scratch2/navudai/baltimorefiles/
+2. On this we run script DECrunScript.pbs - which runs the python file bostonDEC.py 
+    This picks calculates dynamic eigenvector centrality for every word in every hour and saves them along with slope*centrality values in /scratch2/navudai/baltimore/dynamicECall/
+
+  Similarly, we can generate values for other measures by editing script file to run
+    * bostonEC.py - Eigenvector centrality
+    * freq.py - Frequency
+    * degree.py - Degree
+	* dynamicDegree.py - Dynamic Degree
+	* dynamicFreq.py - Dynamic Frequency
+
+3. minset.pbs runs boston-minset2.py which generates top stories for every hour. Input file is specified as "/scratch2/navudai/baltimore/dynamicECall/". This needs to be changed to run for other metrics.
+
+
+4. picktop.py picks the top keywords for every hour. Can be run after (2).

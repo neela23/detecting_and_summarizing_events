@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+#PBS -N DECBalt
+#PBS -l select=1:ncpus=20:mem=172gb,walltime=72:00:00
+#PBS -q bigmem
+
+
+cd $PBS_O_WORKDIR
+
+
+module add anaconda/2.3.0
+
+python baltDEC.py 
